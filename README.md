@@ -12,3 +12,8 @@ from ISCA 1995.  The `membench` C code basically times
 
 The raw times can be plotted as a set of lines or as a heat map
 (I find the latter easier to process visually).
+
+If you are running membench on the totient cluster, you will want
+to obtain the timings by running `qsub membench.pbs` rather than
+by running the `membench` executable on the head node.  The head
+node and the compute nodes have rather different performance characteristics.
