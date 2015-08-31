@@ -17,3 +17,5 @@ If you are running membench on the totient cluster, you will want
 to obtain the timings by running `qsub membench.pbs` rather than
 by running the `membench` executable on the head node.  The head
 node and the compute nodes have rather different performance characteristics.
+
+[1]: http://pages.cs.wisc.edu/~remzi/Postscript/isca95.pdf
