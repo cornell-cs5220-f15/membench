@@ -50,6 +50,39 @@ def heat_plot(df, cmap="jet"):
     plt.colorbar(shrink=0.6)
 
 
+def add_critical_size(level, color='gray'):
+    """Add a critical size to the heat map plot
+
+    Args:
+        level: log2(marked size)
+    """
+    level -= 0.5
+    plt.plot([1,27], [level,level], color=color, linewidth=3, linestyle='--')
+
+
+def add_critical_stride(level, color='gray'):
+    """Add a critical stride to the heat map plot
+
+    Args:
+        level: log2(marked stride)
+    """
+    level -= 0.5
+    plt.plot([level,level], [11,27], color=color, linewidth=3, linestyle='--')
+
+
+def add_critical_assoc(level, color='gray'):
+    """Add a critical stride to the heat map plot
+
+    Args:
+        level: log2(associativity)
+    """
+    level += 0.5
+    plt.plot([1,27], [1+level,27+level], color=color,
+             linewidth=3, linestyle='--')
+    plt.xlim([1,27])
+    plt.ylim([11,27])
+
+
 def main(csv, ext="pdf", cmap="jet"):
     """Plot membench output as line plot and colormap
 
